@@ -35,11 +35,20 @@
     border-radius: 8px;
     margin: 20px;
     outline: 3px solid #333333;
-    transition: transform 0.3s ease;
+    overflow: hidden; /* Ensures content stays within the container */
+    position: relative; /* Allows absolute positioning of the child */
 }
 
-.img-size:hover{
-    transform: scale(1.1);
+.img-size img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image scales proportionally */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+    position: absolute; /* Makes the img stay within the container */
+}
+
+.img-size:hover img {
+    transform: scale(1.1); /* Zooms the image without resizing the container */
 }
 
 .mid-text {
